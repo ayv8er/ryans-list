@@ -1,11 +1,11 @@
-import SearchMovie from "./SearchMovies";
-import RenderMovies from "./RenderMovies";
+import SearchNewMovies from "./SearchNewMovies";
+import RenderNewMovies from "./RenderNewMovies";
 
 export default function NewMovies() {
   return (
     <main className="flex flex-col px-5">
-      <SearchMovie />
-      <RenderMovies />
+      <SearchNewMovies />
+      <RenderNewMovies />
     </main>
   );
 }

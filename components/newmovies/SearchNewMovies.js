@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function SearchMovie() {
+export default function SearchNewMovies() {
   const [movieTitle, setMovieTitle] = useState("");
 
   return (
