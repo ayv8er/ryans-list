@@ -19,11 +19,7 @@ export default function Navbar() {
           </button>
         </div>
         <div className="justify-around w-3/4 hidden md:flex">
-          <button>Favorites</button>
-          <button>Have Seen</button>
-          <button>To Watch</button>
-        </div>
-        <div>
+          <button>Dashboard</button>
           <button>Signup/Login</button>
         </div>
       </div>
@@ -33,9 +29,8 @@ export default function Navbar() {
             hidden: !isMobileMenuOpen,
           })}
         >
-          <button>Favorites</button>
-          <button>Have Seen</button>
-          <button>To Watch</button>
+          <button>Dashboard</button>
+          <button>Signup/Login</button>
         </div>
       ) : null}
     </nav>

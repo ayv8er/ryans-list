@@ -1,7 +1,7 @@
 export default function SelectedMovieModal({ movie, setIsSelectMovie }) {
   return (
     <div
-      style={{ width: "300px", height: "400px" }}
+      style={{ width: "200px", height: "280px" }}
       className="flex flex-col justify-around items-center m-3 py-6 px-3 bg-gray-800 border"
       onClick={() => setIsSelectMovie(false)}
     >
