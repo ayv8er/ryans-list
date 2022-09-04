@@ -4,8 +4,8 @@ export default function SearchNewMovies() {
   const [movieTitle, setMovieTitle] = useState("");
 
   return (
-    <form className="w-full flex justify-center">
-      <div className="flex w-3/4 py-9">
+    <form className="w-full flex h-1/6 justify-center">
+      <div className="flex w-3/4 py-2">
         <input
           className="flex-1 rounded-none rounded-l-md sm:text-xl px-2"
           placeholder="Enter Movie Title"

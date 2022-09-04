@@ -6,11 +6,10 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="flex flex-col py-6 px-2">
+    <nav className="flex flex-col h-1/6 py-2 px-2">
       <div className="flex justify-between">
-        <div>
+        <div className="md:hidden">
           <button
-            className="md:hidden"
             onClick={() => {
               setIsMobileMenuOpen(!isMobileMenuOpen);
             }}
@@ -18,7 +17,7 @@ export default function Navbar() {
             <Bars3Icon className="h-6 w-6" />
           </button>
         </div>
-        <div className="justify-around w-3/4 hidden md:flex">
+        <div className="justify-around w-full hidden md:flex">
           <button>Dashboard</button>
           <button>Signup/Login</button>
         </div>

@@ -1,7 +1,7 @@
 import useSWR from "swr";
-import SingleNewMovie from "./SingleNewMovie";
+import Pagination from "../Pagination";
 
-const top250MoviesEndpoint = `https://imdb-api.com/en/API/Top250Movies/${process.env.NEXT_PUBLIC_IMDB_KEY}`;
+const top250MoviesEndpoint = `https://imdb-api.com/en/API/MostPopularMovies/${process.env.NEXT_PUBLIC_IMDB_KEY}`;
 const getMovies = async () => {
   const response = await fetch(top250MoviesEndpoint);
   const data = await response.json();
@@ -13,21 +13,39 @@ export default function RenderMovies() {
 
   if (error)
     return (
-      <div className="flex flex-wrap justify-evenly">
+      <div className="flex flex-wrap justify-evenly h-4/6">
         Could not load, please refresh or search.
       </div>
     );
 
   if (!data)
-    return <div className="flex flex-wrap justify-evenly">Loading...</div>;
+    return (
+      <div className="flex flex-wrap justify-evenly h-4/6">Loading...</div>
+    );
+
+  const totalNumberPages = Math.ceil(data.items.length / 8);
+  const moviePages = {};
+  const pageIndex = [];
+  let i = 1;
+  let j = 0;
+  while (i <= totalNumberPages) {
+    const page = [];
+    data.items.forEach((movie, index) => {
+      if (index >= j && index < j + 8) {
+        page.push(movie);
+      }
+    });
+    moviePages[i] = page;
+    pageIndex.push(i);
+    j += 8;
+    i++;
+  }
 
   return (
-    <div className="flex flex-wrap justify-evenly">
-      {data &&
-        data.items.length > 0 &&
-        data.items.map((movie) => {
-          return <SingleNewMovie movie={movie} key={movie.id} />;
-        })}
-    </div>
+    <Pagination
+      totalNumberPages={totalNumberPages}
+      moviePages={moviePages}
+      pageIndex={pageIndex}
+    />
   );
 }

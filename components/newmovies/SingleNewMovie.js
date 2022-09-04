@@ -12,14 +12,14 @@ export default function SingleNewMovie({ movie }) {
 
   return (
     <div
-      style={{ width: "200px", height: "280" }}
+      style={{ width: "200px", height: "300px" }}
       className="m-3 cursor-pointer hover:border"
       onClick={() => setIsSelectMovie(true)}
       key={movie.id}
     >
       <picture>
         <img
-          style={{ width: "200px", height: "280" }}
+          style={{ width: "200px", height: "300px" }}
           src={movie.image}
           alt={`${movie.title}`}
         />
