@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="flex flex-col h-1/6 py-2 px-2">
+    <nav className="flex flex-col py-2 px-2">
       <div className="flex justify-between">
         <div className="md:hidden">
           <button

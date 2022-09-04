@@ -13,14 +13,16 @@ export default function RenderMovies() {
 
   if (error)
     return (
-      <div className="flex flex-wrap justify-evenly h-4/6">
+      <div className="flex flex-wrap justify-evenly min-h-screen">
         Could not load, please refresh or search.
       </div>
     );
 
   if (!data)
     return (
-      <div className="flex flex-wrap justify-evenly h-4/6">Loading...</div>
+      <div className="flex flex-wrap justify-evenly min-h-screen">
+        Loading...
+      </div>
     );
 
   const totalNumberPages = Math.ceil(data.items.length / 8);

@@ -23,15 +23,14 @@ export default function Pagination({
   };
 
   return (
-    <div className="flex flex-col justify-between items-center border h-4/6">
-      <div className="flex flex-wrap justify-evenly border">
-        {moviePages[pageNumber].map((movie) => {
-          return <SingleNewMovie movie={movie} key={movie.id} />;
-        })}
-      </div>
-      <ul className="flex justify-around w-1/2 my-1">
+    <div className="flex flex-col justify-center items-center min-h-full">
+      <ul className="flex justify-around w-full sm:w-3/4 my-1 border-t py-2">
         <li
-          className={pageNumber === 1 ? null : "cursor-pointer"}
+          className={
+            pageNumber === 1
+              ? "hidden sm:inline-block"
+              : "hidden sm:inline-block cursor-pointer"
+          }
           onClick={prevClickHandler}
         >
           Prev
@@ -52,12 +51,21 @@ export default function Pagination({
           );
         })}
         <li
-          className={pageNumber === totalNumberPages ? null : "cursor-pointer"}
+          className={
+            pageNumber === totalNumberPages
+              ? "hidden sm:inline-block"
+              : "hidden sm:inline-block cursor-pointer"
+          }
           onClick={nextClickHandler}
         >
           Next
         </li>
       </ul>
+      <div className="flex flex-wrap w-full justify-around">
+        {moviePages[pageNumber].map((movie) => {
+          return <SingleNewMovie movie={movie} key={movie.id} />;
+        })}
+      </div>
     </div>
   );
 }
