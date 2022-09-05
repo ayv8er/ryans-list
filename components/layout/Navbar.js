@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import classNames from "classnames";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 
@@ -18,7 +19,9 @@ export default function Navbar() {
           </button>
         </div>
         <div className="justify-around w-full hidden md:flex">
-          <button>Dashboard</button>
+          <button>
+            <Link href="/favorites">Favorites</Link>
+          </button>
           <button>Signup/Login</button>
         </div>
       </div>
@@ -28,7 +31,7 @@ export default function Navbar() {
             hidden: !isMobileMenuOpen,
           })}
         >
-          <button>Dashboard</button>
+          <button>Favorites</button>
           <button>Signup/Login</button>
         </div>
       ) : null}

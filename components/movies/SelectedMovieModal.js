@@ -1,4 +1,13 @@
+import { useFavoritesContext } from "../../store/favorites-context";
+
 export default function SelectedMovieModal({ movie, setIsSelectMovie }) {
+  const { totalNumberPages, moviePages, pageIndex, setFavorites } =
+    useFavoritesContext();
+
+  const addFavoritesHandler = () => {
+    setFavorites((prevState) => [...prevState, movie]);
+  };
+
   return (
     <div
       style={{ width: "200px", height: "296px" }}
@@ -9,7 +18,7 @@ export default function SelectedMovieModal({ movie, setIsSelectMovie }) {
       <div>{movie.description}</div>
       <button
         className="items-center px-5 rounded-none sm:text-md rounded-r-md bg-gray-50 text-gray-500 hover:bg-gray-300 hover:text-gray-700"
-        onClick={() => setIsSelectMovie(false)}
+        onClick={addFavoritesHandler}
       >
         Add to Favorites
       </button>
