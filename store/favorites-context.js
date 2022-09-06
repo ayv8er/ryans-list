@@ -34,7 +34,13 @@ export function FavoritesContextProvider({ children }) {
 
   return (
     <FavoritesContext.Provider
-      value={{ totalNumberPages, moviePages, pageIndex, setFavorites }}
+      value={{
+        totalNumberPages,
+        moviePages,
+        pageIndex,
+        favorites,
+        setFavorites,
+      }}
     >
       {children}
     </FavoritesContext.Provider>

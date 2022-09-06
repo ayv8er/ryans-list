@@ -20,6 +20,9 @@ export default function Navbar() {
         </div>
         <div className="justify-around w-full hidden md:flex">
           <button>
+            <Link href="/">Search</Link>
+          </button>
+          <button>
             <Link href="/favorites">Favorites</Link>
           </button>
           <button>Signup/Login</button>
@@ -31,7 +34,12 @@ export default function Navbar() {
             hidden: !isMobileMenuOpen,
           })}
         >
-          <button>Favorites</button>
+          <button>
+            <Link href="/">Search</Link>
+          </button>
+          <button>
+            <Link href="/favorites">Favorites</Link>
+          </button>
           <button>Signup/Login</button>
         </div>
       ) : null}

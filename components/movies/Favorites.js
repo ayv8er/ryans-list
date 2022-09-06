@@ -9,6 +9,9 @@ export default function Favorites() {
 
   return (
     <main className="flex flex-col px-5">
+      <div className="w-full flex justify-center text-4xl border-y py-2">
+        My Favorite Movies
+      </div>
       <div className="flex flex-col justify-center items-center min-h-full">
         <PageNavigator
           pageIndex={pageIndex}

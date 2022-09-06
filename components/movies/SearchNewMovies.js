@@ -4,10 +4,10 @@ export default function SearchNewMovies({
   getSearchedMovies,
 }) {
   return (
-    <form className="w-full flex justify-center">
+    <form className="w-full flex justify-center border-y py-2">
       <div className="flex sm:w-3/4 w-full py-2">
         <input
-          className="flex-1 rounded-none rounded-l-md sm:text-xl px-2"
+          className="flex-1 rounded-none rounded-l-md sm:text-xl px-1"
           placeholder="Enter Movie Title"
           value={movieTitle}
           type="text"

@@ -8,7 +8,7 @@ export default function PageNavigator({
     return <div>You have no favorites</div>;
   }
   return (
-    <ul className="flex justify-around w-full sm:w-3/4 my-1 border-t py-2">
+    <ul className="flex justify-around w-full sm:w-3/4 my-1">
       <li
         className={
           pageNumber === 1
